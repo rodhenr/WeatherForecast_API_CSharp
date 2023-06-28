@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using System.Text.Json;
 
 namespace WeatherForecast.Controllers
 {
@@ -6,28 +7,30 @@ namespace WeatherForecast.Controllers
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
     {
-        private static readonly string[] Summaries = new[]
-        {
-        "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-    };
 
-        private readonly ILogger<WeatherForecastController> _logger;
+        private readonly IHttpClientFactory _clientFactory;
 
-        public WeatherForecastController(ILogger<WeatherForecastController> logger)
+        public WeatherForecastController(IHttpClientFactory httpClientFactory)
         {
-            _logger = logger;
+            _clientFactory = httpClientFactory;
         }
 
-        [HttpGet(Name = "GetWeatherForecast")]
-        public IEnumerable<WeatherForecast> Get()
+        [HttpGet]
+        public async Task<ActionResult<WeatherForecast>> Search()
         {
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
+            var client = _clientFactory.CreateClient();
+            HttpResponseMessage response = await client.GetAsync("https://catfact.ninja/fact");
+
+            if (response.IsSuccessStatusCode)
             {
-                Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-                TemperatureC = Random.Shared.Next(-20, 55),
-                Summary = Summaries[Random.Shared.Next(Summaries.Length)]
-            })
-            .ToArray();
+                string content = await response.Content.ReadAsStringAsync();
+
+                WeatherForecast responseObject = JsonSerializer.Deserialize<WeatherForecast>(content)!;
+
+                return responseObject;
+            }
+
+            return NotFound();
         }
     }
 }
