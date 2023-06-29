@@ -32,3 +32,5 @@ C:\Users\rodhe\Desktop\C#\WeatherForecast\WeatherForecast\obj\Debug\net7.0\Weath
 C:\Users\rodhe\Desktop\C#\WeatherForecast\WeatherForecast\obj\Debug\net7.0\WeatherForecast.genruntimeconfig.cache
 C:\Users\rodhe\Desktop\C#\WeatherForecast\WeatherForecast\obj\Debug\net7.0\ref\WeatherForecast.dll
 C:\Users\rodhe\Desktop\C#\WeatherForecast\WeatherForecast\bin\Debug\net7.0\dotenv.net.dll
+C:\Users\rodhe\Desktop\C#\WeatherForecast\WeatherForecast\bin\Debug\net7.0\AutoMapper.dll
+C:\Users\rodhe\Desktop\C#\WeatherForecast\WeatherForecast\bin\Debug\net7.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

@@ -2,6 +2,8 @@ using Microsoft.AspNetCore.Mvc;
 using dotenv;
 using WeatherForecast.Models;
 using dotenv.net;
+using AutoMapper;
+using WeatherForecast.DTOs;
 
 namespace WeatherForecast.Controllers
 {
@@ -10,10 +12,12 @@ namespace WeatherForecast.Controllers
     public class WeatherForecastController : ControllerBase
     {
         private readonly IHttpClientFactory _clientFactory;
+        private readonly IMapper _mapper;
 
-        public WeatherForecastController(IHttpClientFactory httpClientFactory)
+        public WeatherForecastController(IHttpClientFactory httpClientFactory, IMapper mapper)
         {
             _clientFactory = httpClientFactory;
+            _mapper = mapper;
         }
 
         [HttpGet]
@@ -26,7 +30,7 @@ namespace WeatherForecast.Controllers
 
             if (apiKey == null)
             {
-                return NotFound();
+                return new ObjectResult("API_KEY not found") { StatusCode = 500 };
             }
 
             string url = $"https://api.weatherapi.com/v1/forecast.json?key={apiKey}&q={city}&days=6&aqi=no&alerts=no";
@@ -39,7 +43,7 @@ namespace WeatherForecast.Controllers
 
             Weather? content = await response.Content.ReadFromJsonAsync<Weather>();
 
-            return content == null ? NotFound() : content;
+            return Ok(_mapper.Map<WeatherDTO>(content));
         }
     }
 }
