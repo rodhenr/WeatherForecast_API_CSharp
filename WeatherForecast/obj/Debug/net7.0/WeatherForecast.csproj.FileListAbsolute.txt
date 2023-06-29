@@ -31,3 +31,4 @@ C:\Users\rodhe\Desktop\C#\WeatherForecast\WeatherForecast\obj\Debug\net7.0\refin
 C:\Users\rodhe\Desktop\C#\WeatherForecast\WeatherForecast\obj\Debug\net7.0\WeatherForecast.pdb
 C:\Users\rodhe\Desktop\C#\WeatherForecast\WeatherForecast\obj\Debug\net7.0\WeatherForecast.genruntimeconfig.cache
 C:\Users\rodhe\Desktop\C#\WeatherForecast\WeatherForecast\obj\Debug\net7.0\ref\WeatherForecast.dll
+C:\Users\rodhe\Desktop\C#\WeatherForecast\WeatherForecast\bin\Debug\net7.0\dotenv.net.dll
