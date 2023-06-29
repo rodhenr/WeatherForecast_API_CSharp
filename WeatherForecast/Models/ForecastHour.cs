@@ -4,43 +4,6 @@ namespace WeatherForecast.Models;
 
 public class ForecastHour
 {
-    public ForecastHour(int timeEpoch = default, string? time = default, decimal tempC = default, decimal tempF = default, int isDay = default, ForecastCondition? condition = default, decimal windMph = default, decimal windKph = default, int windDegree = default, string? windDir = default, decimal pressureMb = default, decimal pressureIn = default, decimal precipMm = default, decimal precipIn = default, int humidity = default, int cloud = default, decimal feelslikeC = default, decimal feelslikeF = default, decimal windchillC = default, decimal windchillF = default, decimal heatindexC = default, decimal heatindexF = default, decimal dewpointC = default, decimal dewpointF = default, int willItRain = default, int chanceOfRain = default, int willItSnow = default, int chanceOfSnow = default, decimal visKm = default, decimal visMiles = default, decimal gustMph = default, decimal gustKph = default, decimal uv = default)
-    {
-        TimeEpoch = timeEpoch;
-        Time = time;
-        TempC = tempC;
-        TempF = tempF;
-        IsDay = isDay;
-        Condition = condition;
-        WindMph = windMph;
-        WindKph = windKph;
-        WindDegree = windDegree;
-        WindDir = windDir;
-        PressureMb = pressureMb;
-        PressureIn = pressureIn;
-        PrecipMm = precipMm;
-        PrecipIn = precipIn;
-        Humidity = humidity;
-        Cloud = cloud;
-        FeelslikeC = feelslikeC;
-        FeelslikeF = feelslikeF;
-        WindchillC = windchillC;
-        WindchillF = windchillF;
-        HeatindexC = heatindexC;
-        HeatindexF = heatindexF;
-        DewpointC = dewpointC;
-        DewpointF = dewpointF;
-        WillItRain = willItRain;
-        ChanceOfRain = chanceOfRain;
-        WillItSnow = willItSnow;
-        ChanceOfSnow = chanceOfSnow;
-        VisKm = visKm;
-        VisMiles = visMiles;
-        GustMph = gustMph;
-        GustKph = gustKph;
-        Uv = uv;
-    }
-
     [JsonPropertyName("time_epoch")]
     public int TimeEpoch { get; set; }
 

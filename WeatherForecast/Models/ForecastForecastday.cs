@@ -4,16 +4,6 @@ namespace WeatherForecast.Models;
 
 public class ForecastForecastday
 {
-    public ForecastForecastday(DateTime? date = default, int dateEpoch = default, ForecastDay? day = default, ForecastAstro? astro = default, List<ForecastHour>? hour = default)
-    {
-        Date = date;
-        DateEpoch = dateEpoch;
-        Day = day;
-        Astro = astro;
-        Hour = hour;
-
-    }
-
     public DateTime? Date { get; set; }
 
     [JsonPropertyName("date_epoch")]

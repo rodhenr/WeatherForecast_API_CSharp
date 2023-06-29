@@ -1,33 +1,9 @@
-﻿using System.Runtime.Serialization;
-using System.Text.Json.Serialization;
+﻿using System.Text.Json.Serialization;
 
 namespace WeatherForecast.Models;
 
 public class ForecastDay
 {
-    public ForecastDay(decimal maxtempC = default, decimal maxtempF = default, decimal mintempC = default, decimal mintempF = default, decimal avgtempC = default, decimal avgtempF = default, decimal maxwindMph = default, decimal maxwindKph = default, decimal totalprecipMm = default, decimal totalprecipIn = default, decimal avgvisKm = default, decimal avgvisMiles = default, decimal avghumidity = default, int dailyWillItRain = default, int dailyChanceOfRain = default, int dailyWillItSnow = default, int dailyChanceOfSnow = default, ForecastDayCondition? condition = default, decimal uv = default)
-    {
-        MaxtempC = maxtempC;
-        MaxtempF = maxtempF;
-        MintempC = mintempC;
-        MintempF = mintempF;
-        AvgtempC = avgtempC;
-        AvgtempF = avgtempF;
-        MaxwindMph = maxwindMph;
-        MaxwindKph = maxwindKph;
-        TotalprecipMm = totalprecipMm;
-        TotalprecipIn = totalprecipIn;
-        AvgvisKm = avgvisKm;
-        AvgvisMiles = avgvisMiles;
-        Avghumidity = avghumidity;
-        DailyWillItRain = dailyWillItRain;
-        DailyChanceOfRain = dailyChanceOfRain;
-        DailyWillItSnow = dailyWillItSnow;
-        DailyChanceOfSnow = dailyChanceOfSnow;
-        Condition = condition;
-        Uv = uv;
-    }
-
     [JsonPropertyName("maxtemp_c")]
     public decimal MaxtempC { get; set; }
 

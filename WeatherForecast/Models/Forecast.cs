@@ -4,11 +4,11 @@ namespace WeatherForecast.Models;
 
 public class Forecast
 {
-    public Forecast(List<ForecastForecastday>? forecastday = default)
+    public Forecast(List<ForecastForecastday>  forecastday)
     {
-        this.Forecastday = forecastday;
+        Forecastday = forecastday;
     }
 
     [JsonPropertyName("forecastday")]
-    public List<ForecastForecastday>? Forecastday { get; set; }
+    public List<ForecastForecastday> Forecastday { get; set; }
 }

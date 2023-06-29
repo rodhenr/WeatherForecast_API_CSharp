@@ -4,38 +4,11 @@ namespace WeatherForecast.Models;
 
 public class Current
 {
-    public Current(int lastUpdatedEpoch = default, string? lastUpdated = default, decimal tempC = default, decimal tempF = default, int isDay = default, CurrentCondition? condition = default, decimal windMph = default, decimal windKph = default, int windDegree = default, string? windDir = default, decimal pressureMb = default, decimal pressureIn = default, decimal precipMm = default, decimal precipIn = default, int humidity = default, int cloud = default, decimal feelslikeC = default, decimal feelslikeF = default, decimal visKm = default, decimal visMiles = default, decimal uv = default, decimal gustMph = default, decimal gustKph = default)
-    {
-        LastUpdatedEpoch = lastUpdatedEpoch;
-        LastUpdated = lastUpdated;
-        TempC = tempC;
-        TempF = tempF;
-        IsDay = isDay;
-        Condition = condition;
-        WindMph = windMph;
-        WindKph = windKph;
-        WindDegree = windDegree;
-        WindDir = windDir;
-        PressureMb = pressureMb;
-        PressureIn = pressureIn;
-        PrecipMm = precipMm;
-        PrecipIn = precipIn;
-        Humidity = humidity;
-        Cloud = cloud;
-        FeelslikeC = feelslikeC;
-        FeelslikeF = feelslikeF;
-        VisKm = visKm;
-        VisMiles = visMiles;
-        Uv = uv;
-        GustMph = gustMph;
-        GustKph = gustKph;
-    }
-
     [JsonPropertyName("last_updated_epoch")]
     public int LastUpdatedEpoch { get; set; }
 
     [JsonPropertyName("last_updated")]
-    public string? LastUpdated { get; set; }
+    public required string LastUpdated { get; set; }
     
     [JsonPropertyName("temp_c")]
     public decimal TempC { get; set; }

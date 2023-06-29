@@ -4,18 +4,6 @@ namespace WeatherForecast.Models;
 
 public partial class Location
 {
-    public Location(string? name = default, string? region = default, string? country = default, decimal lat = default, decimal lon = default, string? tzId = default, int localtimeEpoch = default, string? localtime = default)
-    {
-        Name = name;
-        Region = region;
-        Country = country;
-        Lat = lat;
-        Lon = lon;
-        TzId = tzId;
-        LocaltimeEpoch = localtimeEpoch;
-        Localtime = localtime;
-    }
-
     public string? Name { get; set; }
 
     public string? Region { get; set; }

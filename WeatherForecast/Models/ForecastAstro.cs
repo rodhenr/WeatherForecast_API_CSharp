@@ -4,18 +4,6 @@ namespace WeatherForecast.Models;
 
 public class ForecastAstro
 {
-    public ForecastAstro(string? sunrise = default, string? sunset = default, string? moonrise = default, string? moonset = default, string? moonPhase = default, string? moonIllumination = default, int isMoonUp = default, int isSunUp = default)
-    {
-        Sunrise = sunrise;
-        Sunset = sunset;
-        Moonrise = moonrise;
-        Moonset = moonset;
-        MoonPhase = moonPhase;
-        MoonIllumination = moonIllumination;
-        IsMoonUp = isMoonUp;
-        IsSunUp = isSunUp;
-    }
-
     public string? Sunrise { get; set; }
 
     public string? Sunset { get; set; }

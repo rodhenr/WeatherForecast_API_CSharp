@@ -1,7 +1,8 @@
 ﻿using AutoMapper;
+using WeatherForecast.DTOs;
 using WeatherForecast.Models;
 
-namespace WeatherForecast.DTOs.Mappings;
+namespace WeatherForecast.Mappings;
 
 public class WeatherToDTOMappingProfile : Profile
 {
