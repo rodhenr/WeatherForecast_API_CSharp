@@ -17,6 +17,16 @@ public class WeatherToDTOMappingProfile : Profile
             .ForMember(dest => dest.CelsiusTemperature, opt => opt.MapFrom(src => src.Current!.TempC))
             .ForMember(dest => dest.FahrenheitTemperature, opt => opt.MapFrom(src => src.Current!.TempF))
             .ForMember(dest => dest.Condition, opt => opt.MapFrom(src => src.Current!.Condition!.Text))
-            .ForMember(dest => dest.Humidity, opt => opt.MapFrom(src => src.Current!.Humidity));
+            .ForMember(dest => dest.Humidity, opt => opt.MapFrom(src => src.Current!.Humidity))
+            .ForMember(dest => dest.ForecastList, opt => opt.MapFrom(src => src.Forecast!.Forecastday.Select(f => new ForecastDaySummary
+            {
+                Date = f.Date,
+                MaxTempCelsius = f.Day!.MaxtempC,
+                MinTempCelsius = f.Day.MintempC,
+                MaxTempFahrenheit = f.Day.MaxtempF,
+                MinTempFahrenheit = f.Day.MintempF,
+                TotalPrecipitationMm = f.Day.TotalprecipMm,
+                Condition = f.Day.Condition!.Text,
+            })));
     }
 }

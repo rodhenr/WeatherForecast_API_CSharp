@@ -1,4 +1,6 @@
-﻿namespace WeatherForecast.DTOs;
+﻿using WeatherForecast.Models;
+
+namespace WeatherForecast.DTOs;
 
 public class WeatherDTO
 {
@@ -11,4 +13,5 @@ public class WeatherDTO
     public decimal FahrenheitTemperature { get; set; }
     public string? Condition { get; set; }
     public int Humidity { get; set; }
+    public List<ForecastDaySummary>? ForecastList { get; set; }
 }

@@ -14,6 +14,4 @@ public class ForecastForecastday
     public ForecastAstro? Astro { get; set; }
 
     public List<ForecastHour>? Hour { get; set; }
-
-
 }
