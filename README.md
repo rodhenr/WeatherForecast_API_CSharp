@@ -11,9 +11,19 @@ The following technologies were used in this project:
 - [Swagger](https://swagger.io/)
 
 ## How to replicate this project :dvd:
-- You will need to create an .env file in the root of the project with the 'API_KEY' property and the value of your [WeatherAPI.com](www.weatherapi.com/) API key.
+- Make sure to have the necessary dependencies installed, such as .NET 7 SDK
+- Clone this repository
+- Create a file named .env in the root directory of the project. Open the .env file and add the following line:
 ```
-API_KEY=123456789
+API_KEY=<your-api-key-from-weather-api>
+```
+- In the command prompt or terminal, navigate to the project's root directory. Then, run the following command to restore the project's dependencies:
+```
+dotnet restore
+```
+- Once the dependencies are installed, you can build and run the project using the following command:
+```
+dotnet run
 ```
 
 ## Questions or Suggestions? :grin:
