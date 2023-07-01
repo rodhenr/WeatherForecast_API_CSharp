@@ -4,12 +4,39 @@ namespace WeatherForecast.Models;
 
 public class Current
 {
+    public Current(int lastUpdatedEpoch, string lastUpdated, decimal tempC, decimal tempF, int isDay, CurrentCondition condition, decimal windMph, decimal windKph, int windDegree, string windDir, decimal pressureMb, decimal pressureIn, decimal precipMm, decimal precipIn, int humidity, int cloud, decimal feelslikeC, decimal feelslikeF, decimal visKm, decimal visMiles, decimal uv, decimal gustMph, decimal gustKph)
+    {
+        LastUpdatedEpoch = lastUpdatedEpoch;
+        LastUpdated = lastUpdated;
+        TempC = tempC;
+        TempF = tempF;
+        IsDay = isDay;
+        Condition = condition;
+        WindMph = windMph;
+        WindKph = windKph;
+        WindDegree = windDegree;
+        WindDir = windDir;
+        PressureMb = pressureMb;
+        PressureIn = pressureIn;
+        PrecipMm = precipMm;
+        PrecipIn = precipIn;
+        Humidity = humidity;
+        Cloud = cloud;
+        FeelslikeC = feelslikeC;
+        FeelslikeF = feelslikeF;
+        VisKm = visKm;
+        VisMiles = visMiles;
+        Uv = uv;
+        GustMph = gustMph;
+        GustKph = gustKph;
+    }
+
     [JsonPropertyName("last_updated_epoch")]
     public int LastUpdatedEpoch { get; set; }
 
     [JsonPropertyName("last_updated")]
-    public required string LastUpdated { get; set; }
-    
+    public string LastUpdated { get; set; }
+
     [JsonPropertyName("temp_c")]
     public decimal TempC { get; set; }
 
@@ -19,7 +46,7 @@ public class Current
     [JsonPropertyName("is_day")]
     public int IsDay { get; set; }
 
-    public CurrentCondition? Condition { get; set; }
+    public CurrentCondition Condition { get; set; }
 
     [JsonPropertyName("wind_mph")]
     public decimal WindMph { get; set; }
@@ -31,7 +58,7 @@ public class Current
     public int WindDegree { get; set; }
 
     [JsonPropertyName("wind_dir")]
-    public string? WindDir { get; set; }
+    public string WindDir { get; set; }
 
     [JsonPropertyName("pressure_mb")]
     public decimal PressureMb { get; set; }

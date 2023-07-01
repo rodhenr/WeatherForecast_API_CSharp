@@ -4,6 +4,29 @@ namespace WeatherForecast.Models;
 
 public class ForecastDay
 {
+    public ForecastDay(decimal maxtempC, decimal maxtempF, decimal mintempC, decimal mintempF, decimal avgtempC, decimal avgtempF, decimal maxwindMph, decimal maxwindKph, decimal totalprecipMm, decimal totalprecipIn, decimal avgvisKm, decimal avgvisMiles, decimal avghumidity, int dailyWillItRain, int dailyChanceOfRain, int dailyWillItSnow, int dailyChanceOfSnow, ForecastDayCondition condition, decimal uv)
+    {
+        MaxtempC = maxtempC;
+        MaxtempF = maxtempF;
+        MintempC = mintempC;
+        MintempF = mintempF;
+        AvgtempC = avgtempC;
+        AvgtempF = avgtempF;
+        MaxwindMph = maxwindMph;
+        MaxwindKph = maxwindKph;
+        TotalprecipMm = totalprecipMm;
+        TotalprecipIn = totalprecipIn;
+        AvgvisKm = avgvisKm;
+        AvgvisMiles = avgvisMiles;
+        Avghumidity = avghumidity;
+        DailyWillItRain = dailyWillItRain;
+        DailyChanceOfRain = dailyChanceOfRain;
+        DailyWillItSnow = dailyWillItSnow;
+        DailyChanceOfSnow = dailyChanceOfSnow;
+        Condition = condition;
+        Uv = uv;
+    }
+
     [JsonPropertyName("maxtemp_c")]
     public decimal MaxtempC { get; set; }
 
@@ -54,7 +77,7 @@ public class ForecastDay
     [JsonPropertyName("daily_chance_of_snow")]
     public int DailyChanceOfSnow { get; set; }
 
-    public ForecastDayCondition? Condition { get; set; }
+    public ForecastDayCondition Condition { get; set; }
 
     public decimal Uv { get; set; }
 }
