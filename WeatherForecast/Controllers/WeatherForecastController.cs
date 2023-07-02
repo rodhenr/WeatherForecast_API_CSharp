@@ -29,6 +29,10 @@ namespace WeatherForecast.Controllers
             {
                 return StatusCode(500, ex.Message);
             }
+            catch(NullRequestException ex)
+            {
+                return StatusCode(400, ex.Message);
+            }
             catch (RequestFailedException ex)
             {
                 return StatusCode(400, ex.Message);

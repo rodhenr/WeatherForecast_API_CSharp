@@ -31,7 +31,7 @@ public class WeatherService : IWeatherService
             throw new InvalidApiKeyException("Invalid API key");
         }
 
-        string url = $"https://api.weatherapi.com/v1/forecast.json?key={ApiKey}&q={city}&days=6&aqi=no&alerts=no";
+        string url = $"https://api.weatherapi.com/v1/forecast.json?key={ApiKey}&q={city}&days=7&aqi=no&alerts=no";
 
         HttpResponseMessage response = await client.GetAsync(url);
 
@@ -42,12 +42,6 @@ public class WeatherService : IWeatherService
 
         Weather? content = await response.Content.ReadFromJsonAsync<Weather>();
 
-
-        if(content == null)
-        {
-            throw new NullRequestException("The request returned NULL");
-        }
-
-        return _mapper.Map<WeatherDTO>(content);
+        return content == null ? throw new NullRequestException("The request returned NULL") : _mapper.Map<WeatherDTO>(content);
     }
 }

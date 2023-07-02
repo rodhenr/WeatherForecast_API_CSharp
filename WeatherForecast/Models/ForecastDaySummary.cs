@@ -4,7 +4,7 @@ namespace WeatherForecast.Models;
 
 public class ForecastDaySummary
 {
-    public ForecastDaySummary(DateTime date, decimal maxTempCelsius, decimal minTempCelsius, decimal maxTempFahrenheit, decimal minTempFahrenheit, decimal totalPrecipitationMm, string condition)
+    public ForecastDaySummary(DateTime date, decimal maxTempCelsius, decimal minTempCelsius, decimal maxTempFahrenheit, decimal minTempFahrenheit, decimal totalPrecipitationMm, string condition, string icon)
     {
         Date = date;
         MaxTempCelsius = maxTempCelsius;
@@ -13,6 +13,7 @@ public class ForecastDaySummary
         MinTempFahrenheit= minTempFahrenheit;
         TotalPrecipitationMm = totalPrecipitationMm;
         Condition = condition;
+        Icon = icon;
     }
 
     public DateTime Date { get; set; }
@@ -28,4 +29,5 @@ public class ForecastDaySummary
     public decimal TotalPrecipitationMm { get; set; }
 
     public string Condition { get; set; }
+    public string Icon { get; set; }
 }
